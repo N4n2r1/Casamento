@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Desafio de Entrada</title>
+  <style>
+    :root {
+      --azul-claro: #d0ebff;
+      --azul-medio: #74c0fc;
+      --azul-escuro: #1864ab;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--azul-claro);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    .container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 400px;
+      border: 3px solid var(--azul-escuro);
+    }
+
+    input {
+      padding: 10px;
+      font-size: 1rem;
+      border: 2px solid var(--azul-medio);
+      border-radius: 8px;
+      width: 80%;
+      margin-top: 15px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: var(--azul-escuro);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0c5089;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #d80000;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.9rem;
+      color: var(--azul-escuro);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🧠 Antes do anúncio... será que você está pronto?</h2>
+    <p>Quanto é 2 + 2?</p>
+    <input type="text" id="resposta" placeholder="Digite sua resposta" />
+    <button onclick="verificarResposta()">Enviar</button>
+    <div class="message" id="mensagem"></div>
+  </div>
+
+  <footer>Feito por Riana's company</footer>
+
+  <script>
+    function verificarResposta() {
+      const resposta = document.getElementById('resposta').value.trim();
+      const mensagem = document.getElementById('mensagem');
+      
+      if (resposta === '4') {
+        window.location.href = "botao.html";
+      } else {
+        mensagem.textContent = "Ah, não! Tente novamente!";
+        document.getElementById('resposta').value = '';
+      }
+    }
+  </script>
+</body>
+</html>
